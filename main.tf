@@ -45,20 +45,3 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
     version   = "latest"
   }
 }
-
-/*
-provisioner "remote-exec" {
-    inline = [
-      "sudo apt-get install -y apache2",
-    ]
-
-    connection {
-      type = "ssh"
-      user = var.admin_user
-      password = var.admin_pass
-      host = azurerm_public_ip.spoke2_jump_vm_pubip.ip_address
-    }
-
-    depends_on = [azurerm_linux_virtual_machine.spoke2_jump_vm]
-}
-*/
