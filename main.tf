@@ -46,3 +46,17 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
     version   = "latest"
   }
 }
+
+module "run_command_linux" {
+  source = "registry.terraform.io/libre-devops/run-vm-command/azurerm"
+  count = var.command ? 1 : 0 
+  depends_on = [azurerm_linux_virtual_machine.linux_vm]
+  
+  location   = var.region
+  rg_name    = var.resource_group
+  vm_name    = "${var.name}-vm"
+  os_type    = "linux"
+
+  command = var.command
+}
+
