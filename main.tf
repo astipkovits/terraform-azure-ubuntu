@@ -49,7 +49,7 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
 
 module "run_command_linux" {
   source = "registry.terraform.io/libre-devops/run-vm-command/azurerm"
-  count = var.command ? 1 : 0 
+  count = (var.command != "") ? 1 : 0 
   depends_on = [azurerm_linux_virtual_machine.linux_vm]
   
   location   = var.region
