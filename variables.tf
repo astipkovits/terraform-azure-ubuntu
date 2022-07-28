@@ -26,3 +26,8 @@ variable "size" {
 variable "subnet_id" {
   type = string
 }
+
+variable "tags" {
+  type = map
+  default = null
+}
