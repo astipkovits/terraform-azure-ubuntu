@@ -26,6 +26,7 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
   location            = var.region
   size                = var.size
   admin_username      = var.admin_username
+  tags                = var.tags
   network_interface_ids = [
     azurerm_network_interface.linux_vm_iface.id,
   ]
