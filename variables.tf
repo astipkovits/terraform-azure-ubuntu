@@ -31,3 +31,8 @@ variable "tags" {
   type = map
   default = null
 }
+
+variable "command" {
+  type = string
+  default = null
+}
