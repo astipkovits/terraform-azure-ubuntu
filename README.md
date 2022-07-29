@@ -2,7 +2,7 @@
 A terraform module to build an Ubuntu instance in Azure 
 
 # Variables
-The follwing variables are used
+The following variables are used
 |**key** |**value**  | **required** |
 |--|--| -- |
 |name  |The name of the VM to be created  | yes
@@ -14,6 +14,13 @@ The follwing variables are used
 |subnet_id  |The ID of the Azure subnet where the VM will be deployed  | yes
 |tags  |A map of tags to be associated with the instance  | no
 |command  |Command(s) to be run on the instance after it is deployed  | no
+
+# Outputs
+The following outputs are exported
+|**key** |**value**  |
+|--|--|
+|linux_mgmt_ip  |The public IP of the VM created  |
+|linux_private_ip  |The private IP of the VM created   |
 
 # Example
 
