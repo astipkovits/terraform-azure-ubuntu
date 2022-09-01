@@ -4,7 +4,7 @@ resource "azurerm_public_ip" "linux_vm_pubip" {
   resource_group_name = var.resource_group
   location            = var.region
   allocation_method   = "Static"
-
+  sku = "Standard"
 }
 
 resource "azurerm_network_interface" "linux_vm_iface" {
