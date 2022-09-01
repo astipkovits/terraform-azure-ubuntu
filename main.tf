@@ -23,7 +23,7 @@ resource "azurerm_network_interface" "linux_vm_iface" {
 resource "azurerm_network_security_group" "nsg1" {
   name                = "${var.name}-nsg"
   location            = var.region
-  resource_group_name = var.azure_resource_group
+  resource_group_name = var.resource_group
 
   security_rule {
     name                       = "inbound-ssh"
