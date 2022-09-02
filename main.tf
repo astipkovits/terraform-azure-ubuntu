@@ -76,7 +76,7 @@ resource "azurerm_network_security_group" "nsg1" {
 
 resource "azurerm_network_interface_security_group_association" "nsg_assoc" {
   network_interface_id      = azurerm_network_interface.linux_vm_iface.id
-  network_security_group_id = azurerm_network_security_group.nsg1
+  network_security_group_id = azurerm_network_security_group.nsg1.id
 }
 
 resource "azurerm_linux_virtual_machine" "linux_vm" {
